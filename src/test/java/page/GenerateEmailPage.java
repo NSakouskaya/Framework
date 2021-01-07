@@ -3,20 +3,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
+import util.BrowserTabManager;
 
-public class GenerateEmailPage {
-
-    protected WebDriver driver;
+public class GenerateEmailPage extends AbstractPage{
 
     public static final String GENERATE_EMAIL_URL = "https://10minutemail.com";
-
-    public GenerateEmailPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-    }
 
     @FindBy(xpath = "//div[@id='copy_address']")
     private WebElement copyAddressButton;
@@ -24,15 +17,26 @@ public class GenerateEmailPage {
     @FindBy(xpath = "//*[@id='mail_messages_content']")
     private WebElement emailBox;
 
-    public void clickCopyAddressButton(){
-        new WebDriverWait(driver, 20)
-                .until(visibilityOfElementLocated(By.xpath("//div[@id='copy_address']")));
-        copyAddressButton.click(); }
+    public GenerateEmailPage(WebDriver driver) {
+        super(driver);
+    }
 
-    public void clickEmailBox(){
-        new WebDriverWait(driver, 20)
-                .until( h -> h.findElement(By.xpath("//div[@class='mail_message']")) != null);
-        emailBox.click(); }
+    public GenerateEmailPage openPage() {
+        BrowserTabManager.openNewTab(GENERATE_EMAIL_URL);
+        return this;
+    }
+
+    public void copyEmailAddress() {
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.visibilityOf(copyAddressButton));
+        copyAddressButton.click();
+    }
+
+    public void checkEmailBox() {
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(h -> h.findElement(By.xpath("//div[@class='mail_message']")) != null);
+        emailBox.click();
+    }
 
 
 }

@@ -2,7 +2,8 @@ package page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchResultsPage extends AbstractPage {
 
@@ -13,12 +14,14 @@ public class SearchResultsPage extends AbstractPage {
         super(driver);
     }
 
-    protected AbstractPage openPage() { return null; }
+    public CalculatorPage openPage() {
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.visibilityOf(searchResultLink));
 
-    public void clickOnLink(){
-        waitForElementLocated(driver, "//div[@class='gs-title']/a[1]");
         searchResultLink.click();
-    }
+        System.out.println("Opening calculator page.");
 
+        return new CalculatorPage(driver);
+    }
 
 }

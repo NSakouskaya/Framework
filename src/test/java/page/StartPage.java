@@ -1,12 +1,8 @@
 package page;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class StartPage extends AbstractPage {
 
@@ -24,15 +20,15 @@ public class StartPage extends AbstractPage {
 
     public StartPage openPage() {
         driver.get(HOMEPAGE_URL);
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(presenceOfElementLocated(By.xpath("//form[@class = 'devsite-search-form']")));
         return this;
     }
 
-    public void clickSearchButton(){ searchButton.click(); }
-    public void inputValueForSearch (String searchValue1){
-        searchField.sendKeys(searchValue1);
+    public SearchResultsPage search (String text){
+        searchButton.click();
+        searchField.sendKeys(text);
         searchField.sendKeys(Keys.ENTER);
+
+        return new SearchResultsPage(driver);
     }
 
 }

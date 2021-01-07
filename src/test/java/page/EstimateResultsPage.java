@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
@@ -45,6 +46,7 @@ public class EstimateResultsPage extends AbstractPage{
     public EstimateResultsPage(WebDriver driver) {
         super(driver);
     }
+
     public AbstractPage openPage() {
         return null;
     }
@@ -82,6 +84,8 @@ public class EstimateResultsPage extends AbstractPage{
     }
 
     public void clickEmailEstimateButton(){
+//        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+//                .until(ExpectedConditions.elementToBeClickable(emailEstimateButton));
         new WebDriverWait(driver, 10)
                 .until(visibilityOfElementLocated(By.xpath("//button[@id='email_quote']")));
         emailEstimateButton.click(); }

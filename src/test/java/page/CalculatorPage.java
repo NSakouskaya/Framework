@@ -1,35 +1,41 @@
 package page;
+import model.CalculatorForm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class CalculatorPage extends AbstractPage {
 
-    public static final int firstButton = 0;
-    public static final int secondButton = 1;
+    private EstimateResultsPage resultsPage = null;
+
+    @Override
+    protected AbstractPage openPage() {
+        return null;
+    }
 
     public CalculatorPage(WebDriver driver) {
         super(driver);
+        switchToFrame(driver);
     }
 
-    public CalculatorPage openPage() {
+    public void switchToFrame(WebDriver driver) {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(visibilityOfElementLocated(By.id("gc-wrapper")));
-
-        driver.switchTo().frame(0);
-        WebElement frame1 = driver.findElement(By.id("myFrame"));
-        driver = driver.switchTo().frame(frame1);
-        return this;
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("myFrame")));
     }
+
+
 
     @FindBy(xpath = "//*[@name='quantity']")
     private WebElement numberOfInstancesField;
+
+    @FindBy(xpath = "//md-select[contains(@aria-label, 'Operating System')]/md-select-value")
+    private WebElement operatingSystemDrp;
 
     @FindBy(xpath = "//md-select[contains(@aria-label, 'VM Class')]/md-select-value")
     private WebElement machineClassDrp;
@@ -43,8 +49,8 @@ public class CalculatorPage extends AbstractPage {
     @FindBy(xpath = "//md-select[contains(@aria-label, 'Committed usage')]/md-select-value")
     private List<WebElement> committedUsageDrp;
 
-    @FindBy(xpath = "//button[@aria-label='Add to Estimate']")
-    private List<WebElement> estimateButton;
+    @FindBy(xpath = "//button[@aria-label='Add to Estimate' and not(@disabled)]")
+    private WebElement estimateButton;
 
     @FindBy(xpath = "//input[@name='nodesCount']")
     private WebElement numberOfNodesField;
@@ -61,95 +67,54 @@ public class CalculatorPage extends AbstractPage {
     @FindBy(xpath = "//md-select[@placeholder='Local SSD']/md-select-value")
     private WebElement localSSDDrp;
 
-    public void fillInNumberOfInstancesField() { numberOfInstancesField.sendKeys();
+    public CalculatorPage fillFirstForm(CalculatorForm calculatorForm) {
+        numberOfInstancesField.sendKeys(calculatorForm.getNumberOfInstances());
+        fillDropdown(operatingSystemDrp, calculatorForm.getOperatingSystem());
+        fillDropdown(machineClassDrp, calculatorForm.getMachineClass());
+        fillDropdown(machineTypeDrp, calculatorForm.getMachineType());
+        fillDropdown(dataCenterDrp.get(0), calculatorForm.getDataCenter());
+        fillDropdown(committedUsageDrp.get(0), calculatorForm.getCommittedUsage());
+
+        return this;
     }
 
-    public void setUpOperatingSystemDrp() {
-        machineClassDrp.click();
-        WebElement softwareList = driver.findElement(By.xpath("//div/descendant-or-self::md-option[@value='free']"));
-        softwareList.click();
-    }
-
-    public void setUpMachineClassDrp() {
-        machineTypeDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']");
-        WebElement machineClassList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='regular']"));
-        machineClassList.click();
-    }
-
-    public void setUpMachineTypeDrp() {
-        machineTypeDrp.click();
-        waitForElementLocated(driver, "//div/descendant-or-self::md-option[@value='CP-COMPUTEENGINE-VMIMAGE-E2-STANDARD-8']");
-        WebElement machineTypeList = driver.findElement(By.xpath("//div/descendant-or-self::md-option[@value='CP-COMPUTEENGINE-VMIMAGE-E2-STANDARD-8']"));
-        machineTypeList.click();
-    }
-
-    public void setUpDataCenterLocationDrp(int index) {
-       dataCenterDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']/descendant-or-self::md-option[@value='europe-west3']");
-        WebElement dataCenterList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='europe-west3']"));
-        dataCenterList.click();
-    }
-
-    public void setUpCommittedUsageDrp(int index) {
-        committedUsageDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']");
-        WebElement committedUsageList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='1']"));
-        committedUsageList.click();
-    }
-
-    public void fillInNumberOfNodesField(String numberOfNodes) {
-        numberOfNodesField.sendKeys(numberOfNodes);
-    }
-
-    public void checkAddGPUsCheckbox() {
-        waitForElementLocated(driver, "//div['@aria-checked=false']");
+    public CalculatorPage fillSecondForm(CalculatorForm calculatorForm) {
+        numberOfNodesField.sendKeys(calculatorForm.getNumberOfNodes());
         addGPUsCheckbox.click();
+        fillDropdown(numberOfGPUsDrp, calculatorForm.getNumberOfGPUs());
+        fillDropdown(typeGPUDrp, calculatorForm.getTypeGPU());
+        fillDropdown(localSSDDrp, calculatorForm.getLocalSSD());
+        fillDropdown(dataCenterDrp.get(1), calculatorForm.getDataCenter());
+        fillDropdown(committedUsageDrp.get(1), calculatorForm.getCommittedUsage());
+
+        return this;
     }
 
-    public void setUpNumberOfGPUsDrp() {
-        waitForElementLocated(driver, "//div/md-input-container/md-select[@placeholder='Number of GPUs']");
-        numberOfGPUsDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']");
-        WebElement numberGPUsList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='4']"));
-        numberGPUsList.click();
-    }
-
-    public void setUpTypeGPUDrp() {
-        typeGPUDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']");
-        WebElement typeGPUDList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='NVIDIA_TESLA_T4']"));
-        typeGPUDList.click();
-    }
-
-    public void setUpLocalSSDDrp() {
-        localSSDDrp.click();
-        waitForElementLocated(driver, "//div[@aria-hidden='false']");
-        WebElement localSSdList = driver.findElement(By.xpath("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='24']"));
-        localSSdList.click();
-    }
-
-    public void clickAddToEstimateButton(int index) {
-        estimateButton(index).isEnabled();
+    public EstimateResultsPage clickAddToEstimateButton() {
         try {
+            new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                    .until(ExpectedConditions.elementToBeClickable(estimateButton));
             estimateButton.click();
         } catch (Exception ex) {
-            System.err.println("Button not found by index: " + index + "; exception message: " + ex.getMessage());
+            System.err.println("Estimate button not found; exception message: " + ex.getMessage());
         }
 
-//        public void setupDropdownValue(String cssClass, String value) {
-//            String propDownXPath = String.format("//md-select[contains(@aria-label, '%s')]/md-select-value", cssClass);
-//            WebElement mc = driver.findElement(By.xpath(propDownXPath));
-//            mc.click();
-//            WebElement selectedValue = getOptionByValue(value);
-//            selectedValue.click();
-//        }
-//
-//        private WebElement getOptionByValue(String value) {
-//            return new WebDriverWait(driver, 5)
-//                    .until(ExpectedConditions.elementToBeClickable(
-//                            By.xpath(String.format("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='%s']", value))));
-//        }
+        if (resultsPage == null) {
+            return new EstimateResultsPage(driver);
+        }
 
+        return resultsPage;
+    }
+
+    public void fillDropdown(WebElement dropDown, String value) {
+        try {
+            dropDown.click();
+            By xpath = By.xpath(String.format("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='%s']", value));
+            WebElement selectedValue = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                    .until(ExpectedConditions.elementToBeClickable(xpath));
+            selectedValue.click();
+        } catch (Exception ex) {
+            System.err.println("DropDown not found; exception message: " + ex.getMessage());
+        }
     }
 }

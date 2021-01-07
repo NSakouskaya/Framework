@@ -1,22 +1,33 @@
 package service;
-
 import model.CalculatorForm;
 
 public class CalculatorFormCreator {
 
-    public static final String numberOfInstances = "4";
-    public static final String operatingSystem = "Free: Debian, CentOS, CoreOS, Ubuntu, or other User Provided OS";
-    public static final String machineClass = "Regular";
-    public static final String machineType = "n1-standard-8 (vCPUs: 8, RAM: 32 GB)";
-    public static final String dataCenter = "Frankfurt (europe-west3)";
-    public static final String committedUsage = "1 Year";
-    public static final String numberOfNodes = "4";
-    public static final String numberOfGPUs = "4";
-    public static final String typeGPU = "NVIDIA Tesla V100";
-    public static final String localSSD = "2x375 Gb";
+    private static final String numberOfInstances = "4";
+    private static final String operatingSystem = "free";
+    private static final String machineClass = "regular";
+    private static final String machineType = "CP-COMPUTEENGINE-VMIMAGE-E2-STANDARD-8";
+    private static final String dataCenter = "europe-west3";
+    private static final String committedUsage = "1";
+    private static final String numberOfNodes = "4";
+    private static final String numberOfGPUs = "4";
+    private static final String typeGPU = "NVIDIA_TESLA_T4";
+    private static final String localSSD = "24";
 
      public static CalculatorForm withValuesFromProperty() {
-         return new CalculatorForm(numberOfInstances, operatingSystem, machineClass, machineType, dataCenter, committedUsage, numberOfNodes, numberOfGPUs, typeGPU, localSSD);
+         CalculatorForm calculator = new CalculatorForm();
+         calculator.setNumberOfInstances(numberOfInstances);
+         calculator.setOperatingSystem(operatingSystem);
+         calculator.setMachineClass(machineClass);
+         calculator.setMachineType(machineType);
+         calculator.setDataCenter(dataCenter);
+         calculator.setCommittedUsage(committedUsage);
+         calculator.setNumberOfNodes(numberOfNodes);
+         calculator.setNumberOfGPUs(numberOfGPUs);
+         calculator.setTypeGPU(typeGPU);
+         calculator.setLocalSSD(localSSD);
+
+         return calculator;
      }
 
     public static CalculatorForm withEmptyNumberOfInstances() {

@@ -27,6 +27,10 @@ public class CalculatorForm {
         this.localSSD = localSSD;
     }
 
+    public CalculatorForm() {
+
+    }
+
     public String getNumberOfInstances() {
         return numberOfInstances;
     }
