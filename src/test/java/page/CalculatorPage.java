@@ -1,5 +1,8 @@
 package page;
+
 import model.CalculatorForm;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,25 +14,7 @@ import java.util.List;
 public class CalculatorPage extends AbstractPage {
 
     private EstimateResultsPage resultsPage = null;
-
-    @Override
-    protected AbstractPage openPage() {
-        return null;
-    }
-
-    public CalculatorPage(WebDriver driver) {
-        super(driver);
-        switchToFrame(driver);
-    }
-
-    public void switchToFrame(WebDriver driver) {
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("myFrame")));
-    }
-
-
+    private final Logger logger = LogManager.getRootLogger();
 
     @FindBy(xpath = "//*[@name='quantity']")
     private WebElement numberOfInstancesField;
@@ -67,6 +52,23 @@ public class CalculatorPage extends AbstractPage {
     @FindBy(xpath = "//md-select[@placeholder='Local SSD']/md-select-value")
     private WebElement localSSDDrp;
 
+    @Override
+    protected AbstractPage openPage() {
+        return null;
+    }
+
+    public CalculatorPage(WebDriver driver) {
+        super(driver);
+        switchToFrame(driver);
+    }
+
+    public void switchToFrame(WebDriver driver) {
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("myFrame")));
+    }
+
     public CalculatorPage fillFirstForm(CalculatorForm calculatorForm) {
         numberOfInstancesField.sendKeys(calculatorForm.getNumberOfInstances());
         fillDropdown(operatingSystemDrp, calculatorForm.getOperatingSystem());
@@ -74,7 +76,7 @@ public class CalculatorPage extends AbstractPage {
         fillDropdown(machineTypeDrp, calculatorForm.getMachineType());
         fillDropdown(dataCenterDrp.get(0), calculatorForm.getDataCenter());
         fillDropdown(committedUsageDrp.get(0), calculatorForm.getCommittedUsage());
-
+        logger.info("First form filled successful");
         return this;
     }
 
@@ -86,7 +88,7 @@ public class CalculatorPage extends AbstractPage {
         fillDropdown(localSSDDrp, calculatorForm.getLocalSSD());
         fillDropdown(dataCenterDrp.get(1), calculatorForm.getDataCenter());
         fillDropdown(committedUsageDrp.get(1), calculatorForm.getCommittedUsage());
-
+        logger.info("Second form filled successful");
         return this;
     }
 
@@ -98,11 +100,9 @@ public class CalculatorPage extends AbstractPage {
         } catch (Exception ex) {
             System.err.println("Estimate button not found; exception message: " + ex.getMessage());
         }
-
         if (resultsPage == null) {
             return new EstimateResultsPage(driver);
         }
-
         return resultsPage;
     }
 

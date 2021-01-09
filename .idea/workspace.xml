@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8896f586-cc9a-44c4-ad09-61bd572761c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Framework.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/driver/DriverSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/driver/DriverSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CalculatorForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CalculatorForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/AbstractPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/CalculatorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/CalculatorPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/EstimateResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/EstimateResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/GenerateEmailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/GenerateEmailPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/SearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/SearchResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/StartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/StartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/CalculatorFormCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/CalculatorFormCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/CalculatorFormAccessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/CalculatorFormAccessTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,11 +30,12 @@
   </component>
   <component name="ProjectId" id="1mWw5NVEhGuLy303CxAwMM66yP4" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SeleniumWebDriver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebDriverTask" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
@@ -61,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.CalculatorFormAccessTest">
+  <component name="RunManager" selected="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect">
     <configuration name="CalculatorFormAccessTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Framework" />
       <extension name="coverage">
@@ -105,6 +94,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.CalculatorFormAccessTest" />
+      <option name="METHOD_NAME" value="verifyThatFirstFormFilledCorrect" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea -Dtestng.dtd.http=true" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="SUITE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -126,9 +142,11 @@
     <list>
       <item itemvalue="TestNG.CalculatorFormAccessTest" />
       <item itemvalue="TestNG.CalculatorFormAccessTest (1)" />
+      <item itemvalue="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect" />
         <item itemvalue="TestNG.CalculatorFormAccessTest" />
         <item itemvalue="TestNG.CalculatorFormAccessTest (1)" />
       </list>

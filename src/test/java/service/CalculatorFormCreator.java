@@ -1,41 +1,58 @@
 package service;
+
 import model.CalculatorForm;
 
 public class CalculatorFormCreator {
 
-    private static final String numberOfInstances = "4";
-    private static final String operatingSystem = "free";
-    private static final String machineClass = "regular";
-    private static final String machineType = "CP-COMPUTEENGINE-VMIMAGE-E2-STANDARD-8";
-    private static final String dataCenter = "europe-west3";
-    private static final String committedUsage = "1";
-    private static final String numberOfNodes = "4";
-    private static final String numberOfGPUs = "4";
-    private static final String typeGPU = "NVIDIA_TESLA_T4";
-    private static final String localSSD = "24";
+    public static final String numberOfInstances = "testdata.number.of.instances";
+    public static final String operatingSystem = "testdata.operating.system";
+    public static final String machineClass = "testdata.machine.class";
+    public static final String machineType = "testdata.machine.type";
+    public static final String dataCenter = "testdata.data.center";
+    public static final String committedUsage = "testdata.committed.usage";
+    public static final String numberOfNodes = "testdata.number.of.nodes";
+    public static final String numberOfGPUs = "testdata.number.of.gPUs";
+    public static final String typeGPU = "testdata.type.gPU";
+    public static final String localSSD = "testdata.local.sSD";
 
-     public static CalculatorForm withValuesFromProperty() {
-         CalculatorForm calculator = new CalculatorForm();
-         calculator.setNumberOfInstances(numberOfInstances);
-         calculator.setOperatingSystem(operatingSystem);
-         calculator.setMachineClass(machineClass);
-         calculator.setMachineType(machineType);
-         calculator.setDataCenter(dataCenter);
-         calculator.setCommittedUsage(committedUsage);
-         calculator.setNumberOfNodes(numberOfNodes);
-         calculator.setNumberOfGPUs(numberOfGPUs);
-         calculator.setTypeGPU(typeGPU);
-         calculator.setLocalSSD(localSSD);
 
-         return calculator;
-     }
-
-    public static CalculatorForm withEmptyNumberOfInstances() {
-         return new CalculatorForm ("", operatingSystem, machineClass, machineType, dataCenter, committedUsage, numberOfNodes, numberOfGPUs, typeGPU, localSSD);
+    public static CalculatorForm withDataFromProperty(){
+        return new CalculatorForm(TestDataReader.getTestData(numberOfInstances),
+                TestDataReader.getTestData(operatingSystem),
+                TestDataReader.getTestData(machineClass),
+                TestDataReader.getTestData(machineType),
+                TestDataReader.getTestData(dataCenter),
+                TestDataReader.getTestData(committedUsage),
+                TestDataReader.getTestData(numberOfNodes),
+                TestDataReader.getTestData(numberOfGPUs),
+                TestDataReader.getTestData(typeGPU),
+                TestDataReader.getTestData(localSSD));
     }
 
+    public static CalculatorForm withEmptyNumberOfInstances() {
+         return new CalculatorForm ("",
+                 TestDataReader.getTestData(operatingSystem),
+                 TestDataReader.getTestData(machineClass),
+                 TestDataReader.getTestData(machineType),
+                 TestDataReader.getTestData(dataCenter),
+                 TestDataReader.getTestData(committedUsage),
+                 TestDataReader.getTestData(numberOfNodes),
+                 TestDataReader.getTestData(numberOfGPUs),
+                 TestDataReader.getTestData(typeGPU),
+                 TestDataReader.getTestData(localSSD));
+             }
+
     public static CalculatorForm withEmptyNumberOfNodes() {
-        return new CalculatorForm (numberOfInstances, operatingSystem, machineClass, machineType, dataCenter, committedUsage, "", numberOfGPUs, typeGPU, localSSD);
+        return new CalculatorForm (TestDataReader.getTestData(numberOfInstances),
+                TestDataReader.getTestData(operatingSystem),
+                TestDataReader.getTestData(machineClass),
+                TestDataReader.getTestData(machineType),
+                TestDataReader.getTestData(dataCenter),
+                TestDataReader.getTestData(committedUsage),
+                TestDataReader.getTestData(""),
+                TestDataReader.getTestData(numberOfGPUs),
+                TestDataReader.getTestData(typeGPU),
+                TestDataReader.getTestData(localSSD));
     }
 
 }

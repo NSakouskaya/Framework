@@ -1,4 +1,5 @@
 package page;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -84,12 +85,10 @@ public class EstimateResultsPage extends AbstractPage{
     }
 
     public void clickEmailEstimateButton(){
-//        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-//                .until(ExpectedConditions.elementToBeClickable(emailEstimateButton));
-        new WebDriverWait(driver, 10)
-                .until(visibilityOfElementLocated(By.xpath("//button[@id='email_quote']")));
-        emailEstimateButton.click(); }
-
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.elementToBeClickable(emailEstimateButton));
+        emailEstimateButton.click();
+    }
 
     public void pasteEmailAddress(){
         new WebDriverWait(driver, 20)

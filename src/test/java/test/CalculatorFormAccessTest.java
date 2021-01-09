@@ -1,5 +1,6 @@
 package test;
 import model.CalculatorForm;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.CalculatorPage;
 import page.EstimateResultsPage;
@@ -14,29 +15,36 @@ public class CalculatorFormAccessTest extends CommonConditions {
 
     @Test
     public void verifyThatFirstFormFilledCorrect() {
-        CalculatorForm testCalculatorForm = CalculatorFormCreator.withValuesFromProperty();
+
+        CalculatorForm testForm = CalculatorFormCreator.withDataFromProperty();
         CalculatorPage page = new StartPage(driver)
                 .openPage()
                 .search(searchValue)
                 .openPage()
-                .fillFirstForm(testCalculatorForm);
+                .fillFirstForm(testForm);
         EstimateResultsPage resultsPage = page.clickAddToEstimateButton();
+        Assert.assertEquals("VM class: regular", resultsPage.getClassVM());
+        Assert.assertEquals("Instance type: e2-standard-8", resultsPage.getInstanceType());
+        Assert.assertEquals("Region: Frankfurt", resultsPage.getComputeRegion());
 
-        resultsPage = page.fillSecondForm(testCalculatorForm).clickAddToEstimateButton();
 
-        GenerateEmailPage emailPage = new GenerateEmailPage(driver).openPage();
-        emailPage.copyEmailAddress();
 
-        BrowserTabManager.switchTab();
-        driver.switchTo().defaultContent();
-        page.switchToFrame(driver);
-
-        resultsPage.clickEmailEstimateButton();
-        resultsPage.pasteEmailAddress();
-        resultsPage.clickSendButton();
-
-        BrowserTabManager.switchTab();
-        emailPage.checkEmailBox();
+//
+//        resultsPage = page.fillSecondForm(testForm).clickAddToEstimateButton();
+//
+//        GenerateEmailPage emailPage = new GenerateEmailPage(driver).openPage();
+//        emailPage.copyEmailAddress();
+//
+//        BrowserTabManager.switchTab();
+//        driver.switchTo().defaultContent();
+//        page.switchToFrame(driver);
+//
+//        resultsPage.clickEmailEstimateButton();
+//        resultsPage.pasteEmailAddress();
+//        resultsPage.clickSendButton();
+//
+//        BrowserTabManager.switchTab();
+//        emailPage.checkEmailBox();
     }
 
 }

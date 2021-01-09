@@ -1,4 +1,5 @@
 package model;
+
 import java.util.Objects;
 
 public class CalculatorForm {
@@ -25,10 +26,6 @@ public class CalculatorForm {
         this.numberOfGPUs = numberOfGPUs;
         this.typeGPU = typeGPU;
         this.localSSD = localSSD;
-    }
-
-    public CalculatorForm() {
-
     }
 
     public String getNumberOfInstances() {
