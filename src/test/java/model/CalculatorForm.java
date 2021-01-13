@@ -15,19 +15,6 @@ public class CalculatorForm {
      private String typeGPU;
      private String localSSD;
 
-//    public CalculatorForm(String numberOfInstances, String operatingSystem, String machineClass, String machineType, String dataCenter, String committedUsage, String numberOfNodes, String numberOfGPUs, String typeGPU, String localSSD) {
-//        this.numberOfInstances = numberOfInstances;
-//        this.operatingSystem = operatingSystem;
-//        this.machineClass = machineClass;
-//        this.machineType = machineType;
-//        this.dataCenter = dataCenter;
-//        this.committedUsage = committedUsage;
-//        this.numberOfNodes = numberOfNodes;
-//        this.numberOfGPUs = numberOfGPUs;
-//        this.typeGPU = typeGPU;
-//        this.localSSD = localSSD;
-//    }
-
     public CalculatorForm() {
     }
 

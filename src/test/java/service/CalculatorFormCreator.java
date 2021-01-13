@@ -31,32 +31,4 @@ public class CalculatorFormCreator {
         return form;
     }
 
-//    public static void withEmptyNumberOfInstances() {
-//        CalculatorForm form = new CalculatorForm();
-//                 form.setNumberOfInstances("");
-//                 form.setOperatingSystem(TestDataReader.getTestData(operatingSystem));
-//                 form.setMachineClass(TestDataReader.getTestData(machineClass));
-//                 form.setMachineType(TestDataReader.getTestData(machineType));
-//                 form.setDataCenter(TestDataReader.getTestData(dataCenter));
-//                 form.setCommittedUsage(TestDataReader.getTestData(committedUsage));
-//                 form.setNumberOfNodes(TestDataReader.getTestData(numberOfNodes));
-//                 form.setNumberOfGPUs(TestDataReader.getTestData(numberOfGPUs));
-//                 form.setTypeGPU(TestDataReader.getTestData(typeGPU));
-//                 form.setLocalSSD(TestDataReader.getTestData(localSSD));
-//    }
-//
-//    public static void withEmptyNumberOfNodes() {
-//        CalculatorForm form = new CalculatorForm();
-//        form.setNumberOfInstances(TestDataReader.getTestData(numberOfInstances));
-//                form.setOperatingSystem(TestDataReader.getTestData(operatingSystem));
-//                form.setMachineClass(TestDataReader.getTestData(machineClass));
-//                form.setMachineType(TestDataReader.getTestData(machineType));
-//                form.setDataCenter(TestDataReader.getTestData(dataCenter));
-//                form.setCommittedUsage(TestDataReader.getTestData(committedUsage));
-//                form.setNumberOfNodes("");
-//                form.setNumberOfGPUs(TestDataReader.getTestData(numberOfGPUs));
-//                form.setTypeGPU(TestDataReader.getTestData(typeGPU));
-//                form.setLocalSSD(TestDataReader.getTestData(localSSD));
-//    }
-
 }

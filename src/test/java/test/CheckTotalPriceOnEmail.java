@@ -26,7 +26,6 @@ public class CheckTotalPriceOnEmail extends CommonConditions {
         EstimateResultsPage resultsPage = page.clickAddToEstimateButton();
         resultsPage = page.fillSecondForm(testForm).clickAddToEstimateButton();
 
-        BrowserTabManager.switchTab();
         GenerateEmailPage emailPage = new GenerateEmailPage(driver).openPage();
         emailPage.copyEmailAddress();
 
@@ -40,6 +39,7 @@ public class CheckTotalPriceOnEmail extends CommonConditions {
         resultsPage.clickSendButton();
 
         BrowserTabManager.switchTab();
+
         emailPage.scrollIntoEmailBox();
         emailPage.checkEmailBox();
 

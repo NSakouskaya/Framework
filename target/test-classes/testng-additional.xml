@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Additional" verbose="1" >
+    <test name="CheckTotalPriceOnEmail"   >
+        <classes>
+            <class name="test.CheckTotalPriceOnEmail" />
+        </classes>
+    </test>
+</suite>

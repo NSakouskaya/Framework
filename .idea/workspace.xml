@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8896f586-cc9a-44c4-ad09-61bd572761c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testng-smoke.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng-smoke.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/qa.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/qa.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/logs/SeleniumFramework.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/logs/SeleniumFramework.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Command line suite/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/screenshots/2021-01-08_23-42-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/screenshots/2021-01-09_00-18-39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/screenshots/2021-01-10_13-39-18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Smoke/CalculatorFormAccess.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Smoke/CalculatorFormAccess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Smoke/CalculatorFormAccess.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Smoke/CalculatorFormAccess.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.CalculatorFormAccessTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.CalculatorFormAccessTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-alphabetical.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/toc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Smoke/toc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/qa.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/qa.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test/CalculatorFormAccessTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/CalculatorFormAccessTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/CheckTotalPriceOnEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/CheckTotalPriceOnEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/testng-smoke.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testng-smoke.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +43,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -51,11 +52,29 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebDriverTask" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test" />
+      <command value="mvnDebug -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test" />
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test -Dmaven.surefire.debug" />
+      <command value="mvn -X -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test" />
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean -Dmaven.surefire.debug test" />
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test -Dmaven.surefire.debug test" />
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml -Dmaven.surefire.debug test" />
+      <command value="mvn -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml debug test" />
+      <command value="mvn -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test" />
+      <command value="mvn -Dbrowser=firefox -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xml clean test" />
+      <command value="mvn -X -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-smoke.xmlclean test" />
+      <command value="mvn -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-additional.xml clean test" />
+      <command value="mvn -Dtestng.dtd.http=true -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-all.xml clean test" />
+      <command value="mvn -Dtestng.dtd.http=true -Dbrowser=chrome -Denvironment=dev -Dsurefire.suiteXmlFiles=src\test\resources\testng-additional.xml clean test" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -70,6 +89,31 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect">
+    <configuration name="Framework [surefire:test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="surefire:test" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="CalculatorFormAccessTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Framework" />
       <extension name="coverage">
@@ -159,6 +203,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Maven.Framework [surefire:test]" />
       <item itemvalue="TestNG.CalculatorFormAccessTest" />
       <item itemvalue="TestNG.CalculatorFormAccessTest (1)" />
       <item itemvalue="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect" />
@@ -166,6 +211,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.CalculatorFormAccessTest.verifyThatFirstFormFilledCorrect" />
+        <item itemvalue="Maven.Framework [surefire:test]" />
         <item itemvalue="TestNG.CalculatorFormAccessTest" />
         <item itemvalue="TestNG.CalculatorFormAccessTest (1)" />
       </list>
@@ -183,6 +229,16 @@
       <updated>1609622470257</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

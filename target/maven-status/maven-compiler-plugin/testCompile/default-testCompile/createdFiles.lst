@@ -1,3 +1,15 @@
+page\EstimateResultsPage.class
+test\CalculatorFormAccessTest.class
+page\SearchResultsPage.class
+model\CalculatorForm.class
+test\CommonConditions.class
+util\BrowserTabManager.class
+page\GenerateEmailPage.class
+page\CalculatorPage.class
 util\TestListener.class
 test\CheckTotalPriceOnEmail.class
+page\StartPage.class
 service\TestDataReader.class
+driver\DriverSingleton.class
+page\AbstractPage.class
+service\CalculatorFormCreator.class

@@ -10,23 +10,23 @@ public class EstimateResultsPage extends AbstractPage{
     @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[2]")
     private WebElement classVM;
 
-    @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[3]")
-    private WebElement instanceType;
-
-    @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[4]")
-    private WebElement computeRegion;
+//    @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[3]")
+//    private WebElement instanceType;
+//
+//    @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[4]")
+//    private WebElement computeRegion;
 
     @FindBy(xpath = "//*[@id='compute']/descendant-or-self::md-list-item[5]")
     private WebElement tenantCommittedTerm;
 
-    @FindBy(xpath = "//*[@id='soleTenant']/descendant-or-self::md-list-item[3]")
-    private WebElement coleTenantRegion;
+//    @FindBy(xpath = "//*[@id='soleTenant']/descendant-or-self::md-list-item[3]")
+//    private WebElement coleTenantRegion;
 
     @FindBy(xpath = "//*[@id='soleTenant']/descendant-or-self::md-list-item[4]")
     private WebElement nodeCommittedTerm;
 
-    @FindBy(xpath = "//*[@id='soleTenant']/descendant-or-self::md-list-item[7]")
-    private WebElement localSSD;
+//    @FindBy(xpath = "//*[@id='soleTenant']/descendant-or-self::md-list-item[7]")
+//    private WebElement localSSD;
 
     @FindBy(xpath = "//*[@id='resultBlock']/descendant-or-self::h2[4]")
     private WebElement totalEstimate;
@@ -53,19 +53,18 @@ public class EstimateResultsPage extends AbstractPage{
 
     public String getClassVM() { return classVM.getText(); }
 
-    public String getInstanceType() { return instanceType.getText(); }
+//    public String getInstanceType() { return instanceType.getText(); }
 
-    public String getColeTenantRegion() {
-        return coleTenantRegion.getText();
-    }
+    public String getCommittedTerm() { return tenantCommittedTerm.getText(); }
+
+    //public String getColeTenantRegion() {return coleTenantRegion.getText();}
 
     public String getNodeCommittedTerm() {
+        waitElementToBeClickableBy(driver, nodeCommittedTerm);
         return nodeCommittedTerm.getText();
     }
 
-    public String getLocalSSD() {
-        return localSSD.getText();
-    }
+    //public String getLocalSSD() {return localSSD.getText();}
 
     public String getTotalEstimate() {
         return totalEstimate.getText();

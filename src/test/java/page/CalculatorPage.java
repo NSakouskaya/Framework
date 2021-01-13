@@ -82,7 +82,7 @@ public class CalculatorPage extends AbstractPage {
         if (filledCalculatorForm == null)
             filledCalculatorForm = new CalculatorForm();
         filledCalculatorForm.setMachineClass(machineClassDrp.getText());
-        filledCalculatorForm.setMachineType(machineTypeDrp.getText());
+        filledCalculatorForm.setCommittedUsage(committedUsageDrp.get(0).getText());
         return this;
     }
 
@@ -98,8 +98,9 @@ public class CalculatorPage extends AbstractPage {
 
         if (filledCalculatorForm == null)
             filledCalculatorForm = new CalculatorForm();
-        filledCalculatorForm.setTypeGPU(typeGPUDrp.getText());
-        filledCalculatorForm.setLocalSSD(localSSDDrp.getText());
+//        filledCalculatorForm.setTypeGPU(typeGPUDrp.getText());
+//        filledCalculatorForm.setLocalSSD(localSSDDrp.getText());
+        filledCalculatorForm.setCommittedUsage(committedUsageDrp.get(1).getText());
         return this;
     }
 

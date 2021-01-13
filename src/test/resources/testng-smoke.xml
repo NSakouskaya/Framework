@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Smoke" verbose="1" >
-    <test name="CheckTotalPriceOnEmail"   >
+    <test name="CalculatorFormAccess"   >
         <classes>
-            <class name="test.CheckTotalPriceOnEmail" />
+            <class name="test.CalculatorFormAccessTest" />
         </classes>
     </test>
 </suite>
