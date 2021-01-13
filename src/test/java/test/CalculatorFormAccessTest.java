@@ -1,13 +1,12 @@
 package test;
+
 import model.CalculatorForm;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.CalculatorPage;
 import page.EstimateResultsPage;
-import page.GenerateEmailPage;
 import page.StartPage;
 import service.CalculatorFormCreator;
-import util.BrowserTabManager;
 
 public class CalculatorFormAccessTest extends CommonConditions {
 
@@ -23,28 +22,28 @@ public class CalculatorFormAccessTest extends CommonConditions {
                 .openPage()
                 .fillFirstForm(testForm);
         EstimateResultsPage resultsPage = page.clickAddToEstimateButton();
-        Assert.assertEquals("VM class: regular", resultsPage.getClassVM());
-        Assert.assertEquals("Instance type: e2-standard-8", resultsPage.getInstanceType());
-        Assert.assertEquals("Region: Frankfurt", resultsPage.getComputeRegion());
+        CalculatorForm form = page.getFilledCalculatorForm();
 
+        Assert.assertEquals(resultsPage.getClassVM(),form.getMachineClass());
+        Assert.assertEquals(resultsPage.getInstanceType(),form.getMachineType());
+    }
 
+    @Test
+    public void verifyThatBothFormsFilledCorrect() {
 
-//
-//        resultsPage = page.fillSecondForm(testForm).clickAddToEstimateButton();
-//
-//        GenerateEmailPage emailPage = new GenerateEmailPage(driver).openPage();
-//        emailPage.copyEmailAddress();
-//
-//        BrowserTabManager.switchTab();
-//        driver.switchTo().defaultContent();
-//        page.switchToFrame(driver);
-//
-//        resultsPage.clickEmailEstimateButton();
-//        resultsPage.pasteEmailAddress();
-//        resultsPage.clickSendButton();
-//
-//        BrowserTabManager.switchTab();
-//        emailPage.checkEmailBox();
+        CalculatorForm testForm = CalculatorFormCreator.withDataFromProperty();
+        CalculatorPage page = new StartPage(driver)
+                .openPage()
+                .search(searchValue)
+                .openPage()
+                .fillFirstForm(testForm);
+        EstimateResultsPage resultsPage = page.clickAddToEstimateButton();
+        CalculatorForm form = page.getFilledCalculatorForm();
+
+        Assert.assertEquals(resultsPage.getColeTenantRegion(),form.getDataCenter());
+        Assert.assertEquals(resultsPage.getNodeCommittedTerm(),form.getCommittedUsage());
+        Assert.assertEquals(resultsPage.getLocalSSD(),form.getLocalSSD());
+
     }
 
 }

@@ -15,98 +15,90 @@ public class CalculatorForm {
      private String typeGPU;
      private String localSSD;
 
-    public CalculatorForm(String numberOfInstances, String operatingSystem, String machineClass, String machineType, String dataCenter, String committedUsage, String numberOfNodes, String numberOfGPUs, String typeGPU, String localSSD) {
-        this.numberOfInstances = numberOfInstances;
-        this.operatingSystem = operatingSystem;
-        this.machineClass = machineClass;
-        this.machineType = machineType;
-        this.dataCenter = dataCenter;
-        this.committedUsage = committedUsage;
-        this.numberOfNodes = numberOfNodes;
-        this.numberOfGPUs = numberOfGPUs;
-        this.typeGPU = typeGPU;
-        this.localSSD = localSSD;
+//    public CalculatorForm(String numberOfInstances, String operatingSystem, String machineClass, String machineType, String dataCenter, String committedUsage, String numberOfNodes, String numberOfGPUs, String typeGPU, String localSSD) {
+//        this.numberOfInstances = numberOfInstances;
+//        this.operatingSystem = operatingSystem;
+//        this.machineClass = machineClass;
+//        this.machineType = machineType;
+//        this.dataCenter = dataCenter;
+//        this.committedUsage = committedUsage;
+//        this.numberOfNodes = numberOfNodes;
+//        this.numberOfGPUs = numberOfGPUs;
+//        this.typeGPU = typeGPU;
+//        this.localSSD = localSSD;
+//    }
+
+    public CalculatorForm() {
     }
 
-    public String getNumberOfInstances() {
-        return numberOfInstances;
-    }
+    public String getNumberOfInstances() { return numberOfInstances; }
 
-    public void setNumberOfInstances(String numberOfInstances) {
-        this.numberOfInstances = numberOfInstances;
-    }
+    public String setNumberOfInstances(String testData) {
+    return numberOfInstances = testData; }
 
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
-    public void setOperatingSystem(String operatingSystem) {
-        this.operatingSystem = operatingSystem;
-    }
+    public String setOperatingSystem(String testData) {
+        return operatingSystem = testData; }
 
     public String getMachineClass() {
         return machineClass;
     }
 
-    public void setMachineClass(String machineClass) {
-        this.machineClass = machineClass;
-    }
+    public String setMachineClass(String testData) {
+        return machineClass = testData; }
 
     public String getMachineType() {
         return machineType;
     }
 
-    public void setMachineType(String machineType) {
-        this.machineType = machineType;
-    }
+    public String setMachineType(String testData) {
+        return machineType = testData; }
 
     public String getDataCenter() {
         return dataCenter;
     }
 
-    public void setDataCenter(String dataCenter) {
-        this.dataCenter = dataCenter;
-    }
+    public String setDataCenter(String testData) {
+        return dataCenter = testData; }
 
     public String getCommittedUsage() {
         return committedUsage;
     }
 
-    public void setCommittedUsage(String committedUsage) {
-        this.committedUsage = committedUsage;
-    }
+    public String setCommittedUsage(String testData) {
+        return committedUsage = testData; }
 
     public String getNumberOfNodes() {
         return numberOfNodes;
     }
 
-    public void setNumberOfNodes(String numberOfNodes) {
-        this.numberOfNodes = numberOfNodes;
-    }
+    public String setNumberOfNodes(String testData) {
+        return numberOfNodes = testData; }
 
     public String getNumberOfGPUs() {
         return numberOfGPUs;
     }
 
-    public void setNumberOfGPUs(String numberOfGPUs) {
-        this.numberOfGPUs = numberOfGPUs;
-    }
+    public String setNumberOfGPUs(String testData) {
+        return numberOfGPUs = testData; }
 
     public String getTypeGPU() {
         return typeGPU;
     }
 
-    public void setTypeGPU(String typeGPU) {
-        this.typeGPU = typeGPU;
-    }
+    public String setTypeGPU(String testData) {
+        return typeGPU = testData; }
 
     public String getLocalSSD() {
         return localSSD;
     }
 
-    public void setLocalSSD(String localSSD) {
-        this.localSSD = localSSD;
-    }
+    public String setLocalSSD(String testData) {
+        return localSSD = testData; }
+
 
     @Override
     public String toString() {
@@ -145,4 +137,5 @@ public class CalculatorForm {
     public int hashCode() {
         return Objects.hash(getNumberOfInstances(), getOperatingSystem(), getMachineClass(), getMachineType(), getDataCenter(), getCommittedUsage(), getNumberOfNodes(), getNumberOfGPUs(), getTypeGPU(), getLocalSSD());
     }
+
 }

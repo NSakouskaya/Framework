@@ -14,6 +14,7 @@ import java.util.List;
 public class CalculatorPage extends AbstractPage {
 
     private EstimateResultsPage resultsPage = null;
+    private CalculatorForm filledCalculatorForm;
     private final Logger logger = LogManager.getRootLogger();
 
     @FindBy(xpath = "//*[@name='quantity']")
@@ -59,10 +60,10 @@ public class CalculatorPage extends AbstractPage {
 
     public CalculatorPage(WebDriver driver) {
         super(driver);
-        switchToFrame(driver);
+        switchToFrame();
     }
 
-    public void switchToFrame(WebDriver driver) {
+    public void switchToFrame() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
@@ -77,6 +78,11 @@ public class CalculatorPage extends AbstractPage {
         fillDropdown(dataCenterDrp.get(0), calculatorForm.getDataCenter());
         fillDropdown(committedUsageDrp.get(0), calculatorForm.getCommittedUsage());
         logger.info("First form filled successful");
+
+        if (filledCalculatorForm == null)
+            filledCalculatorForm = new CalculatorForm();
+        filledCalculatorForm.setMachineClass(machineClassDrp.getText());
+        filledCalculatorForm.setMachineType(machineTypeDrp.getText());
         return this;
     }
 
@@ -89,17 +95,22 @@ public class CalculatorPage extends AbstractPage {
         fillDropdown(dataCenterDrp.get(1), calculatorForm.getDataCenter());
         fillDropdown(committedUsageDrp.get(1), calculatorForm.getCommittedUsage());
         logger.info("Second form filled successful");
+
+        if (filledCalculatorForm == null)
+            filledCalculatorForm = new CalculatorForm();
+        filledCalculatorForm.setTypeGPU(typeGPUDrp.getText());
+        filledCalculatorForm.setLocalSSD(localSSDDrp.getText());
         return this;
     }
 
+    public CalculatorForm getFilledCalculatorForm() {
+        return this.filledCalculatorForm;
+    }
+
     public EstimateResultsPage clickAddToEstimateButton() {
-        try {
-            new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                    .until(ExpectedConditions.elementToBeClickable(estimateButton));
+        waitElementToBeClickableBy(driver, estimateButton);
             estimateButton.click();
-        } catch (Exception ex) {
-            System.err.println("Estimate button not found; exception message: " + ex.getMessage());
-        }
+
         if (resultsPage == null) {
             return new EstimateResultsPage(driver);
         }
@@ -107,14 +118,11 @@ public class CalculatorPage extends AbstractPage {
     }
 
     public void fillDropdown(WebElement dropDown, String value) {
-        try {
             dropDown.click();
             By xpath = By.xpath(String.format("//div[@aria-hidden='false']/descendant-or-self::md-option[@value='%s']", value));
             WebElement selectedValue = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                     .until(ExpectedConditions.elementToBeClickable(xpath));
             selectedValue.click();
-        } catch (Exception ex) {
-            System.err.println("DropDown not found; exception message: " + ex.getMessage());
-        }
     }
-}
+
+ }

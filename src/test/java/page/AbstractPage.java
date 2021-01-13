@@ -1,7 +1,11 @@
 package page;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public abstract class AbstractPage {
 
@@ -14,6 +18,16 @@ public abstract class AbstractPage {
     {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
+
+    static WebElement waitForElementVisibilityOf(WebDriver driver, WebElement webElement) {
+        return new WebDriverWait(driver, 20)
+                .until(visibilityOf(webElement));
+    }
+
+    static WebElement waitElementToBeClickableBy(WebDriver driver, WebElement webElement) {
+        return new WebDriverWait(driver, 20)
+                .until(elementToBeClickable(webElement));
     }
 
 }

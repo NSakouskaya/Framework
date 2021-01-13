@@ -9,8 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class StartPage extends AbstractPage {
 
-    private final Logger logger = LogManager.getRootLogger();
     public static final String HOMEPAGE_URL = "https://cloud.google.com/";
+    private final Logger logger = LogManager.getRootLogger();
 
     @FindBy(xpath = "//form[@class = 'devsite-search-form']")
     private WebElement searchButton;

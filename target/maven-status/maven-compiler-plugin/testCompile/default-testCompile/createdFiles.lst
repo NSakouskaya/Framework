@@ -1,2 +1,3 @@
 util\TestListener.class
+test\CheckTotalPriceOnEmail.class
 service\TestDataReader.class

@@ -1,13 +1,9 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class EstimateResultsPage extends AbstractPage{
 
@@ -44,6 +40,9 @@ public class EstimateResultsPage extends AbstractPage{
     @FindBy(xpath = "//button[@aria-label='Send Email']")
     private WebElement sendButton;
 
+    @FindBy(xpath = "//*[@name='emailForm']/descendant-or-self::h2")
+    private WebElement pop_Up;
+
     public EstimateResultsPage(WebDriver driver) {
         super(driver);
     }
@@ -52,21 +51,9 @@ public class EstimateResultsPage extends AbstractPage{
         return null;
     }
 
-    public String getClassVM() {
-        return classVM.getText();
-    }
+    public String getClassVM() { return classVM.getText(); }
 
-    public String getInstanceType() {
-        return instanceType.getText();
-    }
-
-    public String getComputeRegion() {
-        return computeRegion.getText();
-    }
-
-    public String getTenantCommittedTerm() {
-        return tenantCommittedTerm.getText();
-    }
+    public String getInstanceType() { return instanceType.getText(); }
 
     public String getColeTenantRegion() {
         return coleTenantRegion.getText();
@@ -85,16 +72,16 @@ public class EstimateResultsPage extends AbstractPage{
     }
 
     public void clickEmailEstimateButton(){
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.elementToBeClickable(emailEstimateButton));
+        waitElementToBeClickableBy(driver, emailEstimateButton);
         emailEstimateButton.click();
     }
 
     public void pasteEmailAddress(){
-        new WebDriverWait(driver, 20)
-                .until(visibilityOfElementLocated(By.xpath("//*[@name='emailForm']/descendant-or-self::h2")));
+        waitForElementVisibilityOf(driver, pop_Up);
         emailInput.sendKeys(Keys.chord(Keys.LEFT_CONTROL, "v"));}
 
     public void clickSendButton(){ sendButton.click(); }
 }
+
+
 

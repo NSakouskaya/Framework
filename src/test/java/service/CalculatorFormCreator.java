@@ -17,42 +17,46 @@ public class CalculatorFormCreator {
 
 
     public static CalculatorForm withDataFromProperty(){
-        return new CalculatorForm(TestDataReader.getTestData(numberOfInstances),
-                TestDataReader.getTestData(operatingSystem),
-                TestDataReader.getTestData(machineClass),
-                TestDataReader.getTestData(machineType),
-                TestDataReader.getTestData(dataCenter),
-                TestDataReader.getTestData(committedUsage),
-                TestDataReader.getTestData(numberOfNodes),
-                TestDataReader.getTestData(numberOfGPUs),
-                TestDataReader.getTestData(typeGPU),
-                TestDataReader.getTestData(localSSD));
+        CalculatorForm form = new CalculatorForm();
+                form.setNumberOfInstances(TestDataReader.getTestData(numberOfInstances));
+                form.setOperatingSystem(TestDataReader.getTestData(operatingSystem));
+                form.setMachineClass(TestDataReader.getTestData(machineClass));
+                form.setMachineType(TestDataReader.getTestData(machineType));
+                form.setDataCenter(TestDataReader.getTestData(dataCenter));
+                form.setCommittedUsage(TestDataReader.getTestData(committedUsage));
+                form.setNumberOfNodes(TestDataReader.getTestData(numberOfNodes));
+                form.setNumberOfGPUs(TestDataReader.getTestData(numberOfGPUs));
+                form.setTypeGPU(TestDataReader.getTestData(typeGPU));
+                form.setLocalSSD(TestDataReader.getTestData(localSSD));
+        return form;
     }
 
-    public static CalculatorForm withEmptyNumberOfInstances() {
-         return new CalculatorForm ("",
-                 TestDataReader.getTestData(operatingSystem),
-                 TestDataReader.getTestData(machineClass),
-                 TestDataReader.getTestData(machineType),
-                 TestDataReader.getTestData(dataCenter),
-                 TestDataReader.getTestData(committedUsage),
-                 TestDataReader.getTestData(numberOfNodes),
-                 TestDataReader.getTestData(numberOfGPUs),
-                 TestDataReader.getTestData(typeGPU),
-                 TestDataReader.getTestData(localSSD));
-             }
-
-    public static CalculatorForm withEmptyNumberOfNodes() {
-        return new CalculatorForm (TestDataReader.getTestData(numberOfInstances),
-                TestDataReader.getTestData(operatingSystem),
-                TestDataReader.getTestData(machineClass),
-                TestDataReader.getTestData(machineType),
-                TestDataReader.getTestData(dataCenter),
-                TestDataReader.getTestData(committedUsage),
-                TestDataReader.getTestData(""),
-                TestDataReader.getTestData(numberOfGPUs),
-                TestDataReader.getTestData(typeGPU),
-                TestDataReader.getTestData(localSSD));
-    }
+//    public static void withEmptyNumberOfInstances() {
+//        CalculatorForm form = new CalculatorForm();
+//                 form.setNumberOfInstances("");
+//                 form.setOperatingSystem(TestDataReader.getTestData(operatingSystem));
+//                 form.setMachineClass(TestDataReader.getTestData(machineClass));
+//                 form.setMachineType(TestDataReader.getTestData(machineType));
+//                 form.setDataCenter(TestDataReader.getTestData(dataCenter));
+//                 form.setCommittedUsage(TestDataReader.getTestData(committedUsage));
+//                 form.setNumberOfNodes(TestDataReader.getTestData(numberOfNodes));
+//                 form.setNumberOfGPUs(TestDataReader.getTestData(numberOfGPUs));
+//                 form.setTypeGPU(TestDataReader.getTestData(typeGPU));
+//                 form.setLocalSSD(TestDataReader.getTestData(localSSD));
+//    }
+//
+//    public static void withEmptyNumberOfNodes() {
+//        CalculatorForm form = new CalculatorForm();
+//        form.setNumberOfInstances(TestDataReader.getTestData(numberOfInstances));
+//                form.setOperatingSystem(TestDataReader.getTestData(operatingSystem));
+//                form.setMachineClass(TestDataReader.getTestData(machineClass));
+//                form.setMachineType(TestDataReader.getTestData(machineType));
+//                form.setDataCenter(TestDataReader.getTestData(dataCenter));
+//                form.setCommittedUsage(TestDataReader.getTestData(committedUsage));
+//                form.setNumberOfNodes("");
+//                form.setNumberOfGPUs(TestDataReader.getTestData(numberOfGPUs));
+//                form.setTypeGPU(TestDataReader.getTestData(typeGPU));
+//                form.setLocalSSD(TestDataReader.getTestData(localSSD));
+//    }
 
 }

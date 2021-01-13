@@ -7,12 +7,8 @@ import java.util.ArrayList;
 
 public class BrowserTabManager {
 
-    private static final WebDriver driver;
+    private static final WebDriver driver = DriverSingleton.getDriver();
     private static ArrayList<String> windowHandles;
-
-    static {
-        driver = DriverSingleton.getDriver();
-    }
 
     public static void openNewTab(String link) {
         ((JavascriptExecutor) driver).executeScript("window.open()");
