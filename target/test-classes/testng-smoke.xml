@@ -3,7 +3,7 @@
 <suite name="Smoke" verbose="1" >
     <test name="CalculatorFormAccess"   >
         <classes>
-            <class name="test.CheckTotalPriceOnEmail" />
+            <class name="test.CalculatorFormAccessTest" />
         </classes>
     </test>
 </suite>

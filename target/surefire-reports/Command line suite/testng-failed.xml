@@ -5,6 +5,7 @@
     <classes>
       <class name="test.CalculatorFormAccessTest">
         <methods>
+          <include name="verifyThatFirstFormFilledCorrect"/>
           <include name="setUP"/>
           <include name="stopBrowser"/>
           <include name="verifyThatBothFormsFilledCorrect"/>
